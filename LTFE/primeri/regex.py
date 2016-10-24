@@ -24,6 +24,8 @@ rezultat = re.findall(regex, pesem)
 print(rezultat)
 
 
+
+
 #regex = r'[+-]?\d*[\.,\ ]?\d+'
 # Uloviti moramo 125,826.13; 2.0; 6.2 in 5
 regex = r'[-+]?[0-9]*\.?[0-9]+'
