@@ -1,0 +1,6 @@
+pip
+requests
+flask<0.12
+matplotlib
+Pillow
+pytest
