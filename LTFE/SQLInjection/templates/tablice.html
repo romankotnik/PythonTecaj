@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+  <h1>Avtoročni radar Trojane <small>beleženje kazni</small></h1>
+
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>Vnos</th>
+      <th>Čas</th>
+      <th>Tablica</th>
+      <th>Prekršek</th>
+    </tr>
+    {% for tablica in tablice %}
+      <tr>
+        <td>{{ tablica.id }}</td>
+        <td>{{ tablica.casovni_zig }}</td>
+        <td>{{ tablica.stevilka }}</td>
+        <td>{{ tablica.prekrsek }}</td>
+
+      </tr>
+    {% endfor %}
+  </table>
+
+  <a href="/dodaj" class="btn btn-primary">Dodaj prekrškarja</a>
+</div>
+{% endblock body %}

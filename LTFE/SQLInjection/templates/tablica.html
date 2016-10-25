@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+  <h1>Vnos tablice in prekrška</h1>
+
+
+
+  <form class="form-inline" method="POST" action="{{ url_for('dodaj_tablico') }}" name="form">
+    <div class="form-group">
+      <label for="tablica">Tablica</label>
+      <input type="text" class="form-control" name="tablica" id="tablica" placeholder="LJ-KR-512">
+    </div>
+    <div class="form-group">
+      <label for="prekrsek">Prekršek</label>
+      <input type="text" class="form-control" name="prekrsek" id="prekrsek" placeholder="prehitra vožnja">
+    </div>
+    <button type="submit" class="btn btn-default">Dodaj</button>
+
+  </form>
+
+
+  <br>
+  <hr>
+  <br>
+
+  <a href="/" class="btn btn-default">Nazaj</a>
+  <button onClick="fillInjection()" class="btn btn-danger">SQL Injection</button>
+
+  <script>
+    function fillInjection() {
+      var tablica = document.getElementById('tablica');
+      var prekrsek = document.getElementById('prekrsek');
+      console.log(tablica, prekrsek);
+      tablica.value = 'SQL-INJECTION';
+      prekrsek.value = '\"); DROP TABLE tablice;';
+    }
+  </script>
+
+</div>
+{% endblock body %}
