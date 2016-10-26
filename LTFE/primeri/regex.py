@@ -3,9 +3,9 @@ import re
 opis = '''
     (Ne povedat slavistom, da uporabljam decimalno piko.)
     Moj avto ima prevoženih preko 125000km.
-    Motor je TurboDiezel 2.0.
-    Porabo ima 6.2L/km.
-    Je 5-vraten model.
+    Motor je bencinar 1.0.
+    Porabo ima 5.5l/km.
+    Je 5-vraten model Hyundai i20.
 '''
 
 pesem = '''
@@ -17,17 +17,8 @@ pesem = '''
     13 malih slončno se je pozibavalo na pajčevini tam pod drevesom ...
 '''
 
-# Najdi vse številke!
-# Katere številke se pojavljajo?
-regex = r'[0-9]+'
-rezultat = re.findall(regex, pesem)
-print(rezultat)
 
 
-
-
-#regex = r'[+-]?\d*[\.,\ ]?\d+'
-# Uloviti moramo 125,826.13; 2.0; 6.2 in 5
-regex = r'[-+]?[0-9]*\.?[0-9]+'
+regex = r'[-+]?[0-9]*\.?[0-9]+[\w/]*'
 rezultat = re.findall(regex, opis)
 print(rezultat)
