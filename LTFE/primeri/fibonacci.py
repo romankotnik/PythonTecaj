@@ -8,8 +8,9 @@ while len(fibonacci) < n:
     novi = fibonacci[-1] + fibonacci[-2]
     fibonacci.append(novi)
 
-        
+
 print(fibonacci)
+print(len(fibonacci))
 
 
 fibonacci = [1, 1]
@@ -20,5 +21,16 @@ for i in range(n - 2):
     fibonacci.append(novi)
 
 print(fibonacci)
+print(len(fibonacci))
 
+
+# Fibonaccijevo zaporedje rešeno rekurzivno. (Funkicija kliče samo sebe)
+fibonacci = [1, 1]
+def calc_fib():
+    if len(fibonacci) < n:
+        fibonacci.append(fibonacci[-1] + fibonacci[-2])
+        calc_fib()
+
+calc_fib()
+print(fibonacci)
 print(len(fibonacci))
