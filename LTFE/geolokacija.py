@@ -7,6 +7,11 @@
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
 
+def polepsaj(podatki):
+    import json
+    return json.dumps(podatki, indent=2, sort_keys=True)
+
+
 def get_exif_data(image):
     """Returns a dictionary from the exif data of an PIL Image item. Also converts the GPS Tags"""
     exif_data = {}
@@ -20,9 +25,9 @@ def get_exif_data(image):
                     sub_decoded = GPSTAGS.get(t, t)
                     gps_data[sub_decoded] = value[t].decode('utf-8') if isinstance(value[t], bytes) else value[t]
 
-                exif_data[decoded] = gps_data if isinstance(gps_data, bytes) else gps_data
+                exif_data[decoded] = gps_data
             else:
-                exif_data[decoded] = value
+                exif_data[decoded] = value.decode('utf-8') if isinstance(value, bytes) else value
 
     return exif_data
 
