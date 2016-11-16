@@ -1,0 +1,10 @@
+{
+  "GPSAltitude": [304, 1],
+  "GPSAltitudeRef": "\u0000",
+  "GPSLatitude": [[33, 1], [52, 1], [129675, 4096]],
+  "GPSLatitudeRef": "N",
+  "GPSLongitude": [[116, 1], [18, 1], [23882, 4096]],
+  "GPSLongitudeRef": "W",
+  "GPSMapDatum": "WGS-84",
+  "GPSVersionID": "\u0002\u0000\u0000\u0000"
+}
